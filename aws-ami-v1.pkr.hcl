@@ -16,9 +16,9 @@ source "amazon-ebs" "amazon-linux" {
   region          = "eu-west-2"
   ami_name        = "ami-version-1.0.1-{{timestamp}}"
   instance_type   = "t2.micro"
-  source_ami      = "ami-053a617c6207ecc7b"
+  source_ami      = "ami-0bb84b8ffd87024d8"
   
-  ssh_username    = "ubuntu"
+  ssh_username    = "ec2-user"
   ami_regions     = [
                       "eu-west-2"
                     ]
