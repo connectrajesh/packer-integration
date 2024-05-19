@@ -27,5 +27,8 @@ jobs:
         with:
           node-version: 20
 
+      - name: Initialize Packer
+        run: packer init aws-ami-v1.pkr.hcl
+
       - name: Build AMI
         run: packer build aws-ami-v1.pkr.hcl
