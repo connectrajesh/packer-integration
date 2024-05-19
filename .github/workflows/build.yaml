@@ -24,6 +24,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          node-version: 20
 
       - name: Build AMI
         run: packer build aws-ami-v1.pkr.hcl
