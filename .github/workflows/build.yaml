@@ -1,0 +1,24 @@
+name: Build AMI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-ami:
+    runs-on: ubuntu-latest
+    
+    container:
+      image: hashicorp/packer:latest
+      options: --user root -v /var/run/docker.sock:/var/run/docker.sock
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build AMI
+      run: packer build aws-ami-v1.pkr.hcl
